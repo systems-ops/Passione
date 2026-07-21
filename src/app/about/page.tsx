@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Passione Emporio",
@@ -95,10 +95,15 @@ export default function AboutPage() {
           Meet Fabrizio Cercatore
         </h2>
         <div className="mt-6 grid gap-8 md:grid-cols-[1fr_1.4fr] md:items-start">
-          <PhotoPlaceholder
-            label="Fabrizio Cercatore, founder & Maestro Pizzaiolo"
-            aspect="aspect-[3/4]"
-          />
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl">
+            <Image
+              src="/images/fabrizio.jpg"
+              alt="Fabrizio Cercatore tossing pizza dough"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 40vw, 100vw"
+            />
+          </div>
           <div className="space-y-5 leading-relaxed text-brand-black/75">
             <p>
               Fabrizio&apos;s journey began in Italy, where he opened his first

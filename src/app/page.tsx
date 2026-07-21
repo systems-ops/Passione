@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import { restaurantInfo } from "@/lib/menu-data";
 
 const highlights = [
@@ -55,7 +55,16 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <PhotoPlaceholder label="Hero shot — dining room, a hero dish, or the wood-fired oven" />
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+            <Image
+              src="/images/dining-room.webp"
+              alt="The Passione Emporio dining room in Berkeley"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
         </div>
       </section>
 
