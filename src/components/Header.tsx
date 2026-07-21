@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { restaurantInfo } from "@/lib/menu-data";
+import Wordmark from "@/components/Wordmark";
 
 const navLinks = [
   { href: "/menu", label: "Menu" },
@@ -21,14 +20,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-black/10 bg-brand-cream/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <Image
-            src="/images/logo.png"
-            alt={restaurantInfo.name}
-            width={160}
-            height={48}
-            priority
-            className="h-10 w-auto"
-          />
+          <Wordmark />
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">

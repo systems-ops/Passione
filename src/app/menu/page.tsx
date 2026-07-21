@@ -16,7 +16,7 @@ export default function MenuPage() {
           Dinner Menu
         </p>
         <h1 className="mt-3 font-display text-4xl italic text-brand-black">
-          A Corner of Italy in Berkeley
+          A Corner of Italy
         </h1>
         <p className="mt-4 text-sm text-brand-black/60">
           Ask your server about our vegan &amp; gluten-free pasta and pizza options.

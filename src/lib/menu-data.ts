@@ -131,11 +131,6 @@ export const dinnerMenu: MenuCategory[] = [
         price: "26",
         orderable: true,
       },
-      {
-        name: "Pasta Specials",
-        description: "Inquire with your server",
-        price: "A.Q.",
-      },
     ],
   },
   {
@@ -395,12 +390,12 @@ export const dinnerMenu: MenuCategory[] = [
 
 export const restaurantInfo = {
   name: "Passione Emporio",
-  tagline: "A corner of Italy in Berkeley",
+  tagline: "A corner of Italy",
   location: "on 5th",
   address: "2324 Fifth Street Unit A, Berkeley, CA 94710",
   phone: "510-612-8677",
   phoneHref: "tel:+15106128677",
-  hours: "Mon, Tues, Thurs, Fri, Sat, Sun · 5:00PM - 9:00PM",
+  hours: "Mon, Tues, Thurs, Fri, Sat, Sun · 11:00AM - 9:30PM",
   hoursClosed: "Closed Wednesdays",
   instagram: "https://www.instagram.com/passione_emporioon5th",
   website: "https://www.passionebrands.com",

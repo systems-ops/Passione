@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-import { dinnerMenu, restaurantInfo } from "@/lib/menu-data";
+import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import { restaurantInfo } from "@/lib/menu-data";
 
 const highlights = [
   {
@@ -17,10 +17,6 @@ const highlights = [
   },
 ];
 
-const featuredCategories = dinnerMenu.filter((c) =>
-  ["pizze", "pasta", "dolci"].includes(c.id)
-);
-
 export default function Home() {
   return (
     <div>
@@ -28,7 +24,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-red">
-              {restaurantInfo.location === "on 5th" ? "Berkeley, California" : ""}
+              Berkeley, California
             </p>
             <h1 className="mt-4 font-display text-5xl italic leading-tight text-brand-black md:text-6xl">
               {restaurantInfo.tagline}
@@ -59,16 +55,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center">
-            <Image
-              src="/images/logo.png"
-              alt={restaurantInfo.name}
-              width={520}
-              height={158}
-              priority
-              className="h-auto w-full max-w-md"
-            />
-          </div>
+          <PhotoPlaceholder label="Hero shot — dining room, a hero dish, or the wood-fired oven" />
         </div>
       </section>
 
@@ -87,40 +74,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex items-end justify-between">
-          <h2 className="font-display text-3xl italic text-brand-black">
-            From the Menu
-          </h2>
-          <Link
-            href="/menu"
-            className="text-sm font-semibold text-brand-red hover:underline"
-          >
-            View full menu →
-          </Link>
-        </div>
-
-        <div className="mt-10 grid gap-10 md:grid-cols-3">
-          {featuredCategories.map((cat) => (
-            <div key={cat.id}>
-              <h3 className="border-b border-brand-green/40 pb-2 text-lg font-semibold uppercase tracking-wide text-brand-green">
-                {cat.title}
-              </h3>
-              <ul className="mt-4 space-y-3">
-                {cat.items.slice(0, 4).map((item) => (
-                  <li key={item.name} className="flex justify-between gap-3 text-sm">
-                    <span className="text-brand-black/85">{item.name}</span>
-                    {item.price && (
-                      <span className="whitespace-nowrap text-brand-black/50">
-                        ${item.price}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
+        <p className="font-display text-2xl italic leading-relaxed text-brand-black md:text-3xl">
+          &ldquo;Food made with passione, shared with familia.&rdquo;
+        </p>
+        <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-black/50">
+          Fabrizio Cercatore · Founder
+        </p>
       </section>
 
       <section className="bg-brand-green text-white">
