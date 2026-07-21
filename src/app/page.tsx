@@ -6,7 +6,10 @@ const highlights = [
   {
     title: "Handmade Pasta",
     body: "Tagliatelle, gnocchi, and pappardelle made in-house with organic American grains.",
-    image: null,
+    image: {
+      src: "/images/pasta.jpg",
+      alt: "A bowl of house-made tagliatelle with a creamy sauce and basil",
+    },
   },
   {
     title: "Wood-Fired Pizza",
@@ -23,6 +26,25 @@ const highlights = [
       src: "/images/wine.jpg",
       alt: "A row of Italian red wine bottles",
     },
+  },
+];
+
+const kitchenGallery = [
+  {
+    src: "/images/charcuterie-overhead.jpg",
+    alt: "A charcuterie and cheese board with prosciutto, bresaola, and an Aperol spritz",
+  },
+  {
+    src: "/images/seafood.jpg",
+    alt: "A seafood dish with mussels, clams, and shrimp, served with an Aperol spritz",
+  },
+  {
+    src: "/images/seafood-pasta.jpg",
+    alt: "Squid ink pasta with mussels, clams, and shrimp",
+  },
+  {
+    src: "/images/charcuterie-table.jpg",
+    alt: "A charcuterie board set at a table in the Passione Emporio dining room",
   },
 ];
 
@@ -115,34 +137,21 @@ export default function Home() {
             View full menu →
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/images/charcuterie-overhead.jpg"
-              alt="A charcuterie and cheese board with prosciutto, bresaola, and an Aperol spritz"
-              fill
-              className="object-cover"
-              sizes="(min-width: 768px) 33vw, 100vw"
-            />
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/images/seafood.jpg"
-              alt="A seafood dish with mussels, clams, and shrimp, served with an Aperol spritz"
-              fill
-              className="object-cover"
-              sizes="(min-width: 768px) 33vw, 100vw"
-            />
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-            <Image
-              src="/images/charcuterie-table.jpg"
-              alt="A charcuterie board set at a table in the Passione Emporio dining room"
-              fill
-              className="object-cover"
-              sizes="(min-width: 768px) 33vw, 100vw"
-            />
-          </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          {kitchenGallery.map((photo) => (
+            <div
+              key={photo.src}
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 25vw, 50vw"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
