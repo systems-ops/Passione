@@ -103,6 +103,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="flex items-end justify-between">
+          <h2 className="font-display text-3xl italic text-brand-black">
+            From Our Kitchen
+          </h2>
+          <Link
+            href="/menu"
+            className="text-sm font-semibold text-brand-red hover:underline"
+          >
+            View full menu →
+          </Link>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/charcuterie-overhead.jpg"
+              alt="A charcuterie and cheese board with prosciutto, bresaola, and an Aperol spritz"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/seafood.jpg"
+              alt="A seafood dish with mussels, clams, and shrimp, served with an Aperol spritz"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <Image
+              src="/images/charcuterie-table.jpg"
+              alt="A charcuterie board set at a table in the Passione Emporio dining room"
+              fill
+              className="object-cover"
+              sizes="(min-width: 768px) 33vw, 100vw"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-brand-cream">
         <div className="mx-auto grid max-w-4xl gap-8 px-6 py-16 md:grid-cols-[auto_1fr] md:items-center">
           <div className="relative mx-auto aspect-square w-40 overflow-hidden rounded-full md:w-48">
