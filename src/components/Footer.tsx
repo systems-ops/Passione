@@ -23,7 +23,6 @@ export default function Footer() {
             </a>
           </p>
           <p className="mt-3 text-sm text-brand-cream/80">{restaurantInfo.hours}</p>
-          <p className="text-sm text-brand-cream/80">{restaurantInfo.hoursClosed}</p>
         </div>
 
         <div>

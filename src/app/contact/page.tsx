@@ -39,7 +39,6 @@ export default function ContactPage() {
               Hours
             </h2>
             <p className="mt-2 text-brand-black/80">{restaurantInfo.hours}</p>
-            <p className="text-brand-black/60">{restaurantInfo.hoursClosed}</p>
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-green">

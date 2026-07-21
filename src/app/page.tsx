@@ -6,14 +6,23 @@ const highlights = [
   {
     title: "Handmade Pasta",
     body: "Tagliatelle, gnocchi, and pappardelle made in-house with organic American grains.",
+    image: null,
   },
   {
     title: "Wood-Fired Pizza",
     body: "Fourteen 12-inch pies on organic dough, from a classic Margherita to the truffle-kissed Fiori.",
+    image: {
+      src: "/images/pizza-prep.jpg",
+      alt: "Pizzas being hand-topped in the Passione Emporio kitchen",
+    },
   },
   {
     title: "Italian Wine & Beer",
     body: "A curated Italian wine list alongside Dolomiti, Menabrea, and Baladin on tap and in bottle.",
+    image: {
+      src: "/images/wine.jpg",
+      alt: "A row of Italian red wine bottles",
+    },
   },
 ];
 
@@ -72,6 +81,17 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-3">
           {highlights.map((h) => (
             <div key={h.title}>
+              {h.image && (
+                <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={h.image.src}
+                    alt={h.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                  />
+                </div>
+              )}
               <h2 className="font-display text-2xl italic text-brand-black">
                 {h.title}
               </h2>
@@ -83,13 +103,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-6 py-16 text-center">
-        <p className="font-display text-2xl italic leading-relaxed text-brand-black md:text-3xl">
-          &ldquo;Food made with passione, shared with familia.&rdquo;
-        </p>
-        <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-black/50">
-          Fabrizio Cercatore · Founder
-        </p>
+      <section className="bg-brand-cream">
+        <div className="mx-auto grid max-w-4xl gap-8 px-6 py-16 md:grid-cols-[auto_1fr] md:items-center">
+          <div className="relative mx-auto aspect-square w-40 overflow-hidden rounded-full md:w-48">
+            <Image
+              src="/images/fabrizio-laughing.jpg"
+              alt="Fabrizio Cercatore laughing while tossing pizza dough"
+              fill
+              className="object-cover"
+              sizes="192px"
+            />
+          </div>
+          <div className="text-center md:text-left">
+            <p className="font-display text-2xl italic leading-relaxed text-brand-black md:text-3xl">
+              &ldquo;Food made with passione, shared with familia.&rdquo;
+            </p>
+            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand-black/50">
+              Fabrizio Cercatore · Founder
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="bg-brand-green text-white">
@@ -103,7 +136,6 @@ export default function Home() {
               </a>
             </p>
             <p className="mt-4 text-white/90">{restaurantInfo.hours}</p>
-            <p className="text-white/70">{restaurantInfo.hoursClosed}</p>
           </div>
           <div className="flex flex-wrap gap-4 md:justify-end">
             <Link

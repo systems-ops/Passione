@@ -16,9 +16,7 @@ export default function ReservePage() {
       <h1 className="mt-3 font-display text-4xl italic text-brand-black">
         Book Your Table
       </h1>
-      <p className="mt-4 text-brand-black/70">
-        {restaurantInfo.hours} · {restaurantInfo.hoursClosed}
-      </p>
+      <p className="mt-4 text-brand-black/70">{restaurantInfo.hours}</p>
 
       <div className="mt-10">
         <OpenTableWidget />

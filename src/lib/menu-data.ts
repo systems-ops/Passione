@@ -395,8 +395,7 @@ export const restaurantInfo = {
   address: "2324 Fifth Street Unit A, Berkeley, CA 94710",
   phone: "510-612-8677",
   phoneHref: "tel:+15106128677",
-  hours: "Mon, Tues, Thurs, Fri, Sat, Sun · 11:00AM - 9:30PM",
-  hoursClosed: "Closed Wednesdays",
+  hours: "Every day · 11:00AM - 9:30PM",
   instagram: "https://www.instagram.com/passione_emporioon5th",
   website: "https://www.passionebrands.com",
 };
